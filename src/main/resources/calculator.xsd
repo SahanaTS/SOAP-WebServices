@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://demo.example.com/calculate"
+	xmlns:tns="http://demo.example.com/calculate"
+	elementFormDefault="qualified">
+	<xs:element name="GetCalculatorRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="number1" type="xs:float"></xs:element>
+				<xs:element name="number2" type="xs:float"></xs:element>
+				<xs:element name="operation" type="xs:string"></xs:element>
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="GetCalculatorResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="calculator" type="tns:Calculator"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="Calculator">
+		<xs:sequence>
+			<xs:element name="number1" type="xs:float"></xs:element>
+			<xs:element name="number2" type="xs:float"></xs:element>
+			<xs:element name="operator" type="xs:string"></xs:element>
+			<xs:element name="result" type="xs:float"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
